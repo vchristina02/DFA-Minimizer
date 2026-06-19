@@ -6,12 +6,11 @@ import java.awt.Font;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JButton;
-import javax.swing.JTextArea;
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.border.EmptyBorder;
 
 public class Interface extends JFrame {
  

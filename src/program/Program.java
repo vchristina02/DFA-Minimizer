@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 public class Program {
 
     public static void main(String[] args) {
-        String path = "/home/adena/Documentos/automato.dat";//localiza o arquivo
+        String path = "assets/automato.dat";//localiza o arquivo
 		
 	List<Transicao> list = new ArrayList<>();
         String[] inicio = null, fim = null, simbs = null;
@@ -22,7 +22,7 @@ public class Program {
 	try (BufferedReader br = new BufferedReader(new FileReader(path))) {    //leitura do arquivo
 	
             String line = br.readLine();
-            qs.qtd = line.split(",");   //a primeira linha do arquivo é jogada em um vetor que guada a quantidade de "Q's"
+            qs.qtd = line.split(",");   //a primeira linha do arquivo é jogada em um vetor que guarda a quantidade de "Q's"
             line = br.readLine();
             simbs = line.split(",");    //o segunda linha é jogada no vetor de simbolos
             
@@ -44,7 +44,7 @@ public class Program {
                 
                 if(origem.equals(aux)){     //caso possua exibe a mensagem de que ele nao pode ser minimizado
                     cont++;
-                    if(cont > 1 && auxSim.equals(simbolo)){
+                    if(cont > 1 && simbolo.equals(auxSim)){
                         JOptionPane.showMessageDialog(null, "O autômato não pode ser minimizado."+
                             "De cada estado não podem partir múltiplas transições com um mesmo símbolo.");
                         System.exit(0);
@@ -178,7 +178,7 @@ public class Program {
             }
         }
         for (Transicao p : list) { 
-            if(a.equals(p.getOrigem()) && alf2.equals(p.getSimbolo())){  //vê pra onde vai a segunda transição
+            if(a != null && a.equals(p.getOrigem()) && alf2.equals(p.getSimbolo())){  //vê pra onde vai a segunda transição
                 b = p.getDestino();
             }
         }
